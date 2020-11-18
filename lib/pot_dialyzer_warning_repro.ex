@@ -3,16 +3,8 @@ defmodule PotDialyzerWarningRepro do
   Documentation for `PotDialyzerWarningRepro`.
   """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> PotDialyzerWarningRepro.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def totp_valid?(token, secret) do
+    :pot.valid_totp(token, secret, [{:window, 1}])
   end
+
 end
